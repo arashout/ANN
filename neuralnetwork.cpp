@@ -43,7 +43,7 @@ void NeuralNetwork::feedforward(const Eigen::VectorXf &inputs){
     for(size_t i = 0; i < numLayers - 1; i++){
         Eigen::VectorXf &curLayer = layers[i];
         Eigen::VectorXf &nextLayer = layers[i+1];
-        Eigen::VectorXf layerWithBias(curLayer.rows() + bias.rows());
+        Eigen::VectorXf layerWithBias(curLayer.rows() + 1);
         Eigen::MatrixXf &curWeights = weightsMatrices[i];
         // Sum weighted neuron values from current layer to next layer
         // NOTE: That bias is last neuron in layer
